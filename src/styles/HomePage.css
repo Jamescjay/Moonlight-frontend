@@ -1,0 +1,207 @@
+body {
+  background-color: #1a2332;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  margin-top: 20mm;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Ensure relative positioning for the hero overlay */
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(26, 35, 50, 0.7); /* Dark overlay */
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 2rem;
+}
+
+.hero-text {
+  color: #fff;
+  max-width: 600px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.button {
+  background-color: #ff9100;
+  color: #fff;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #ff6c00;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.popular-subjects,
+.popular-courses {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.subjects-container,
+.courses-container {
+  display: flex;
+  justify-content: center; /* Center the cards */
+  flex-wrap: wrap; /* Wrap to the next line if there's not enough space */
+  gap: 20px; /* Space between cards */
+}
+
+.subject-card,
+.course-card {
+  background-color: white;
+  color: #2c3e50;
+  border: 1px solid orange; /* Solid orange border */
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s, background-color 0.3s; /* Card hover effect */
+  width: 150px; /* Fixed width for uniform card sizes */
+  height: 200px; /* Fixed height for cards */
+}
+
+.subject-card:hover,
+.course-card:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  background-color: yellow; /* Change background to yellow on hover */
+}
+
+.subject-image,
+.course-image {
+  width: 100%;
+  height: 100px; /* Set a fixed height for images */
+  object-fit: cover; /* Cover the card area */
+  border-radius: 5px 5px 0 0; /* Round the top corners of the image */
+}
+
+/* New styles for subject text */
+.subject-card h3,
+.subject-card p {
+  font-size: 1rem; /* Match font size for subjects and module numbers */
+  margin: 0.5rem 0; /* Add some margin for spacing */
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.popular-courses {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.courses-container {
+  display: flex;
+  justify-content: center; /* Center the cards */
+  flex-wrap: wrap; /* Wrap to the next line if there's not enough space */
+  gap: 20px; /* Space between cards */
+}
+
+.course-card {
+  background-color: white;
+  color: #2c3e50;
+  border: 2px solid orange; /* Solid orange border */
+  border-radius: 5px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s, background-color 0.3s; /* Card hover effect */
+  width: 200px; /* Increased width for larger cards */
+  height: 300px; /* Increased height for cards */
+  position: relative; /* Enable absolute positioning for description */
+}
+
+.course-card:hover {
+  background-color: yellow; /* Change background to yellow on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.course-image {
+  width: 100%;
+  height: 150px; /* Set a fixed height for images */
+  object-fit: cover; /* Cover the card area */
+  border-radius: 5px 5px 0 0; /* Round the top corners of the image */
+}
+
+.course-description {
+  display: none; /* Initially hide the description */
+  background-color: orange; /* Orange background for the description */
+  color: white;
+  padding: 0.5rem;
+  position: absolute; /* Position it at the bottom */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 0 0 5px 5px; /* Round the bottom corners */
+  font-size: 0.9rem; /* Slightly smaller font size */
+}
+
+.course-card:hover .course-description {
+  display: block; /* Show description on hover */
+}
+
+.read-more {
+  color: white; /* Read more link color */
+  text-decoration: underline;
+  cursor: pointer;
+}
