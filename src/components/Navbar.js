@@ -7,12 +7,12 @@ function Navbar({ loggedIn, handleLogout }) {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <Link to="/">Crestview</Link>
+        <Link to="/">Moonlight</Link>
       </div>
       <div className="navbar-links">
         <Link to="/">Home</Link>
         <Link to="/courses">Courses</Link>
-        <Link to="/faq">FAQ</Link>
+        <Link to="/about">About Us</Link>
         {!loggedIn ? (
           <>
             <Link to="/login">Login</Link>

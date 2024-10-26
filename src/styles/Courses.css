@@ -1,0 +1,106 @@
+.courses-page {
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.course {
+  text-align: center;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+  justify-content: center; 
+  gap: 10px; 
+}
+
+.course-card {
+  position: relative; 
+  background-color: #fff;
+  border: 1px solid orange;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+  width: 250px; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between; 
+  height: auto; 
+  transition: transform 0.3s; 
+}
+
+.course-label {
+  position: absolute; /* Position it absolutely */
+  top: 10px; /* Position from the top */
+  left: 10px; /* Change this to position from the left */
+  background-color: white; /* White background for label */
+  border: 1px solid orange; /* Border for the label */
+  border-radius: 5px; /* Rounded corners */
+  padding: 5px; 
+  font-size: 12px; 
+  display: none;
+  z-index: 10; 
+}
+
+.course-card:hover .course-label {
+  display: block; /* Show on hover */
+}
+
+.course-card:hover {
+  transform: scale(1.03); /* Slightly enlarge on hover */
+}
+
+
+.course-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.course-card h2 {
+  font-size: 16px; /* Adjusted font size */
+  font-weight: bold;
+  margin-top: 10px; /* Adjusted margin for better spacing */
+  overflow: hidden; /* Prevent text overflow */
+  text-overflow: ellipsis; /* Show ellipsis for overflow */
+  white-space: nowrap; /* Prevent line breaks */
+}
+
+.course-card p {
+  font-size: 12px; /* Smaller font size for better fit */
+  color: #666;
+}
+
+.read-more-btn {
+  background-color: white;
+  color: orange;
+  border: 1px solid orange;
+  padding: 8px 16px; /* Reduced padding for better fit */
+  font-size: 12px;
+  cursor: pointer;
+  margin-top: 10px; /* Added margin for spacing */
+}
+
+.read-more-btn:hover {
+  background-color: orange;
+  color: white;
+}
+
+.separator {
+  border-top: 1px solid orange; /* Horizontal line */
+  margin: 10px 0; /* Spacing around the line */
+}
+
+.load-more-btn {
+  background-color: white;
+  color: orange;
+  border: 1px solid orange;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.load-more-btn:hover {
+  background-color: orange;
+  color: white;
+}

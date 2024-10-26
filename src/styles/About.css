@@ -1,0 +1,217 @@
+/* About Us Section */
+.about-page {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.about-us {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.about-us h1 {
+  font-size: 2.5rem;
+  color: white;
+}
+
+.about-us p {
+  color: #888;
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 2rem auto;
+}
+
+.about-text {
+  max-width: 500px;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  color: white;
+}
+
+.about-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.stat-card {
+  background: #ffea94;
+  border: 2px solid orange;
+  padding: 1rem;
+  border-radius: 5px;
+  text-align: center;
+  width: 120px; /* Set a consistent width for each card */
+}
+
+.stat-card img {
+  width: 40px; /* Adjust as needed for the icon size */
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0.5rem 0 0;
+}
+
+.stat-card span {
+  font-size: 1rem;
+  color: #333;
+}
+
+
+/* Our Teachers Section */
+.our-teachers {
+  text-align: center;
+  margin: 3rem auto;
+}
+
+.our-teachers h2 {
+  font-size: 2rem;
+  color: white;
+}
+
+.teachers-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.teacher-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+}
+
+.teacher-card {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.teacher-card:hover {
+  background-color: orange;
+}
+
+.teacher-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.social-icons {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 0;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.teacher-card:hover .social-icons {
+  opacity: 1;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.teacher-info {
+  margin-top: 0.5rem;
+  color: white;
+  text-align: center;
+}
+
+
+/* Student Reviews Section */
+.student-reviews {
+  text-align: center;
+  margin: 3rem auto;
+}
+
+.student-reviews h2 {
+  font-size: 2rem;
+  color: white;
+}
+
+.reviews-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+
+.review-card {
+  text-align: center;
+  max-width: 300px;
+  position: relative;
+  margin-top: 2rem;
+  font-size: 0.8rem
+}
+
+.dialogue-box {
+  background: #ffea94;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 2px solid orange;
+  position: absolute;
+  top: -50px;
+  width: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.dialogue-box::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #ffea94 transparent transparent transparent;
+  transform: translateX(-50%);
+}
+
+.review-card img {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  margin-top: 6rem;
+}
+
+.student-info {
+  margin-top: 0.5rem;
+}
+
+.student-info h4 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: white;
+}
+
+.student-info span {
+  color: gold;
+}
+

@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import CoursesPage from "./components/CoursesPage";
-import FAQPage from "./components/FAQPage";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Navbar from "./components/Navbar"; // Import Navbar
+import About from "./components/About";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -31,7 +31,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/courses" element={<CoursesPage />} />
-        <Route path="/faq" element={<FAQPage />} />
+        <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login setLoggedIn={setLoggedIn} />} />
         <Route path="/register" element={<Register />} />
       </Routes>
