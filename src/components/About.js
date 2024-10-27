@@ -13,7 +13,7 @@ function About() {
           <div className="about-text">
             <h2>Creating A Community Of Learners.</h2>
             <p>
-              Crestview is a community of learners including students, parents,
+              Moonlight is a community of learners including students, parents,
               and staff who are dedicated to creating an academically rigorous,
               culturally caring, and inclusive learning environment. We are
               reaching excellence in academics and changing history!
@@ -136,7 +136,7 @@ function About() {
           <div className="review-card">
             <div className="dialogue-box">
               <p>
-                "Crestview has the best mentors that hold your hand and guide
+                "Moonlight has the best mentors that hold your hand and guide
                 you through the curriculum and advise you every step of the
                 way."
               </p>
@@ -153,7 +153,7 @@ function About() {
           <div className="review-card">
             <div className="dialogue-box">
               <p>
-                "Being a culinary arts student at Crestview was a great
+                "Being a culinary arts student at Moonlight was a great
                 opportunity, I was able to work with the best mentors."
               </p>
             </div>
@@ -169,7 +169,7 @@ function About() {
           <div className="review-card">
             <div className="dialogue-box">
               <p>
-                "I graduated from Crestview as a business student and was able
+                "I graduated from Moonlight as a business student and was able
                 to land an internship after a few weeks."
               </p>
             </div>

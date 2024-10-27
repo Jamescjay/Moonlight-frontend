@@ -1,11 +1,12 @@
+// src/App.js
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import CoursesPage from "./components/CoursesPage";
-import Register from "./components/Register";
-import Login from "./components/Login";
-import Navbar from "./components/Navbar"; // Import Navbar
+import Navbar from "./components/Navbar"; 
 import About from "./components/About";
+import Footer from "./components/Footer";
+import Contact from "./components/Contact";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -27,14 +28,18 @@ function App() {
 
   return (
     <Router>
-      <Navbar loggedIn={loggedIn} handleLogout={handleLogout} />
+      <Navbar
+        loggedIn={loggedIn}
+        handleLogout={handleLogout}
+        setLoggedIn={setLoggedIn}
+      />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/courses" element={<CoursesPage />} />
         <Route path="/about" element={<About />} />
-        <Route path="/login" element={<Login setLoggedIn={setLoggedIn} />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

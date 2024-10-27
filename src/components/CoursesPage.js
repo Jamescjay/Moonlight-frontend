@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../styles/Courses.css"
 
 function CoursesPage() {
-  const [courses, setCourses] = useState([
+  const [courses] = useState([
     {
       title: "25 Modules",
       description: "Change the world one code at a time.",

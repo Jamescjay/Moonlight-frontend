@@ -41,16 +41,16 @@
 }
 
 .stat-card {
-  background: #ffea94;
+  background: #f0e855;
   border: 2px solid orange;
   padding: 1rem;
   border-radius: 5px;
   text-align: center;
-  width: 120px; /* Set a consistent width for each card */
+  width: 120px; 
 }
 
 .stat-card img {
-  width: 40px; /* Adjust as needed for the icon size */
+  width: 40px; 
   height: auto;
   margin-bottom: 0.5rem;
 }
@@ -171,7 +171,7 @@
 }
 
 .dialogue-box {
-  background: #ffea94;
+  background: #f0e855;
   padding: 1rem;
   border-radius: 10px;
   border: 2px solid orange;

@@ -19,7 +19,7 @@ function HomePage() {
                   A Revolutionary Way <br /> To Educate.
                 </h1>
                 <p>
-                  Here at Crestview, we focus on creating a new way for our
+                  Here at Moonlight, we focus on creating a new way for our
                   students to learn. We support a community schools approach
                   that organizes and maximizes resources to ensure every student
                   thrives, aligning with school priorities for success.
