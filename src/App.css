@@ -65,3 +65,8 @@ nav button {
     font-size: 12px; /* Even smaller paragraph text */
   }
 }
+
+#root {
+  width: 100%; /* Full width */
+  min-height: 100vh; /* Full height of the viewport */
+}
