@@ -10,6 +10,7 @@ nav {
   display: flex; /* Flexbox for alignment */
   justify-content: space-between; /* Space out items */
   align-items: center; /* Center items vertically */
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
 nav a {
@@ -31,18 +32,23 @@ nav button {
   nav {
     flex-direction: column; /* Stack items on smaller screens */
     align-items: flex-start; /* Align items to the start */
+    width: 100%; /* Ensure navbar takes full width */
   }
 
   nav a {
     margin: 5px 0; /* Add vertical margin for stacked items */
+    width: 100%; /* Full width for links */
+    text-align: center; /* Center text for better touch targets */
   }
 
   h1 {
     font-size: 24px; /* Smaller font size on mobile */
+    text-align: center; /* Center title */
   }
 
   p {
     font-size: 14px; /* Smaller paragraph text */
+    text-align: justify; /* Justify text for better alignment */
   }
 }
 
