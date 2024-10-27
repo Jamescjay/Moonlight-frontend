@@ -3,9 +3,22 @@ import "../styles/Contact.css";
 
 function Contact() {
   const [faqOpen, setFaqOpen] = useState(null);
+  const [feedbackMessage, setFeedbackMessage] = useState("");
 
   const toggleFaq = (index) => {
     setFaqOpen(faqOpen === index ? null : index);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFeedbackMessage("Feedback submitted successfully");
+
+    // Clear the message after 3 seconds
+    setTimeout(() => {
+      setFeedbackMessage("");
+    }, 3000);
+
+    e.target.reset(); // Clears the form
   };
 
   return (
@@ -48,13 +61,16 @@ function Contact() {
       <div className="contact-content">
         <div className="contact-form">
           <h3>Send Us A Message</h3>
-          <form>
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email" />
-            <input type="tel" placeholder="Phone" />
-            <textarea placeholder="Message"></textarea>
+          <form onSubmit={handleSubmit}>
+            <input type="text" placeholder="Name" required />
+            <input type="email" placeholder="Email" required />
+            <input type="tel" placeholder="Phone" required />
+            <textarea placeholder="Message" required></textarea>
             <button type="submit">Send Message</button>
           </form>
+          {feedbackMessage && (
+            <div className="alert-box">{feedbackMessage}</div>
+          )}
         </div>
         <img
           src="https://thuotracy.github.io/school-website/images/Contact%20us.gif"

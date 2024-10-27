@@ -12,7 +12,7 @@ function Navbar({ loggedIn, handleLogout, setLoggedIn }) {
     <>
       <nav className="navbar">
         <div className="navbar-logo">
-          <Link to="/">Moonlight</Link>
+          <Link to="/">🌕 Moonlight</Link>
         </div>
         <div className="navbar-links">
           <Link to="/">Home</Link>

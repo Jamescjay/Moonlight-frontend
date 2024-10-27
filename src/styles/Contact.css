@@ -198,3 +198,16 @@
 .faq-question.active-question .arrow-icon {
   color: white;
 }
+
+.alert-box {
+  color: #fff;
+  background-color: #4caf50; /* Green background for success */
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  transition: opacity 0.5s ease;
+}
+
+

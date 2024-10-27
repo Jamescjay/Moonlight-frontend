@@ -7,7 +7,9 @@ function Footer() {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-info">
-          <h2>Moonlight</h2>
+          <a href="/">
+            <h2>🌕Moonlight</h2>
+          </a>
           <p>Ngong Road P.O. Box: 1896-20117 Nairobi, Kenya</p>
           <div className="icons">
             <a href="#facebook">
@@ -47,16 +49,16 @@ function Footer() {
           <h5>Useful Links</h5>
           <ul>
             <li>
-              <a href="/help">Help Desk</a>
+              <a href="/contact">Help Desk</a>
             </li>
             <li>
-              <a href="/faqs">FAQs</a>
+              <a href="/contact">FAQs</a>
             </li>
             <li>
-              <a href="/feedback">Send Feedback</a>
+              <a href="/contact">Send Feedback</a>
             </li>
             <li>
-              <a href="/privacy-policy">Privacy Policy</a>
+              <a href="/about">Privacy Policy</a>
             </li>
           </ul>
         </div>

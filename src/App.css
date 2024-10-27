@@ -1,10 +1,15 @@
+/* General Styles */
 body {
   font-family: Arial, sans-serif;
 }
 
+/* Navbar Styles */
 nav {
   background-color: #f8f9fa;
   padding: 10px;
+  display: flex; /* Flexbox for alignment */
+  justify-content: space-between; /* Space out items */
+  align-items: center; /* Center items vertically */
 }
 
 nav a {
@@ -21,10 +26,36 @@ nav button {
   cursor: pointer;
 }
 
-h1 {
-  color: #343a40;
+/* Responsive Styles */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column; /* Stack items on smaller screens */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  nav a {
+    margin: 5px 0; /* Add vertical margin for stacked items */
+  }
+
+  h1 {
+    font-size: 24px; /* Smaller font size on mobile */
+  }
+
+  p {
+    font-size: 14px; /* Smaller paragraph text */
+  }
 }
 
-p {
-  font-size: 16px;
+@media (max-width: 480px) {
+  nav {
+    padding: 5px; /* Reduced padding on mobile */
+  }
+
+  h1 {
+    font-size: 20px; /* Even smaller font size */
+  }
+
+  p {
+    font-size: 12px; /* Even smaller paragraph text */
+  }
 }
