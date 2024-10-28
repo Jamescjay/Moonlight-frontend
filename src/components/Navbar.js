@@ -1,4 +1,3 @@
-// src/components/Navbar.js
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
@@ -7,6 +6,7 @@ import LoginModal from "./LoginModal";
 
 function Navbar({ loggedIn, handleLogout, setLoggedIn }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <>
@@ -14,11 +14,27 @@ function Navbar({ loggedIn, handleLogout, setLoggedIn }) {
         <div className="navbar-logo">
           <Link to="/">🌕 Moonlight</Link>
         </div>
-        <div className="navbar-links">
-          <Link to="/">Home</Link>
-          <Link to="/courses">Courses</Link>
-          <Link to="/about">About Us</Link>
-          <Link to="/contact">Contact</Link>
+        <div
+          className={`hamburger-menu ${isMenuOpen ? "open" : ""}`}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div className={`navbar-links ${isMenuOpen ? "active" : ""}`}>
+          <Link to="/" onClick={() => setIsMenuOpen(false)}>
+            Home
+          </Link>
+          <Link to="/courses" onClick={() => setIsMenuOpen(false)}>
+            Courses
+          </Link>
+          <Link to="/about" onClick={() => setIsMenuOpen(false)}>
+            About Us
+          </Link>
+          <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
+            Contact
+          </Link>
           {!loggedIn ? (
             <div className="navbar-icon" onClick={() => setIsModalOpen(true)}>
               <Person />
