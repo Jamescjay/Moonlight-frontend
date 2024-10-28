@@ -107,3 +107,16 @@
   background-color: orange;
   color: white;
 }
+
+/* Responsive Courses Grid */
+@media (max-width: 200px) {
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
+    gap: 15px;
+  }
+  
+  .course-card {
+    width: 90%; /* Smaller width for mobile */
+    margin: 0 auto;
+  }
+}

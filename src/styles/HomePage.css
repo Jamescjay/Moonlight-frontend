@@ -216,3 +216,23 @@ h2 {
   object-fit: cover; 
 }
 
+/* Main Content for Mobile */
+@media (max-width: 200px) {
+  .hero-image {
+    height: 300px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    left: 10%;
+  }
+}
