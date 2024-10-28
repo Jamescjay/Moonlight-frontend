@@ -40,7 +40,7 @@
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
+@media (max-width: 200px) {
   .navbar-links {
     display: none; /* Hide links by default on mobile */
     flex-direction: column;
