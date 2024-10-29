@@ -24,17 +24,15 @@
   margin: 2rem auto;
 }
 
-/* Ensure text doesn't overflow and image scales */
 .about-text {
   max-width: 500px;
 }
 
-.about-image img {
-  max-width: 100%; /* Responsive image */
-  height: auto; /* Maintain aspect ratio */
+.about-text h2 {
+  font-size: 2rem;
+  color: white;
 }
 
-/* Statistics Section */
 .about-stats {
   display: flex;
   justify-content: space-around;
@@ -66,6 +64,7 @@
   font-size: 1rem;
   color: #333;
 }
+
 
 /* Our Teachers Section */
 .our-teachers {
@@ -144,6 +143,7 @@
   text-align: center;
 }
 
+
 /* Student Reviews Section */
 .student-reviews {
   text-align: center;
@@ -157,7 +157,7 @@
 
 .reviews-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-around; /* Ensure spacing between review cards */
   margin-top: 2rem;
 }
 
@@ -165,7 +165,7 @@
   text-align: center;
   max-width: 300px;
   position: relative;
-  margin-top: 2rem;
+  margin: 2rem; /* Adjusted margin for spacing */
   font-size: 0.8rem;
 }
 
@@ -215,33 +215,13 @@
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-  .about-content {
-    flex-direction: column; /* Stack items vertically on smaller screens */
-    align-items: center; /* Center align content */
-  }
-
-  .about-text {
-    max-width: 90%; /* Allow more width for text */
-    padding: 0 1rem; /* Add some padding */
-    text-align: center; /* Center text for better readability */
-  }
-
-  .about-stats {
-    flex-direction: column; /* Stack stats vertically */
-    align-items: center; /* Center align stats */
-  }
-
-  .stat-card {
-    margin: 1rem 0; /* Add vertical margin for spacing */
-    width: 80%; /* Make cards responsive */
-  }
-
   .teachers-container {
-    flex-direction: column; /* Stack teacher cards on smaller screens */
+    flex-direction: column; /* Stack teacher cards vertically */
     align-items: center; /* Center align teacher cards */
   }
 
-  .review-card {
-    max-width: 90%; /* Allow more width for reviews */
+  .reviews-container {
+    flex-direction: column; /* Stack review cards vertically */
+    align-items: center; /* Center align review cards */
   }
 }
