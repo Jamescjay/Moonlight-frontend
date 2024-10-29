@@ -7,9 +7,13 @@
   color: #fff;
   padding: 1rem 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Maintain space between elements */
   align-items: center;
   z-index: 1000;
+}
+
+.navbar-logo {
+  flex: 1; /* Allow logo to take available space on the left */
 }
 
 .navbar-logo a {
@@ -22,6 +26,8 @@
 .navbar-links {
   display: flex;
   align-items: center;
+  flex: 2; /* Allow links to take available space */
+  justify-content: flex-end; /* Align links to the right */
 }
 
 /* Hamburger Menu Styles */
@@ -40,7 +46,7 @@
 }
 
 /* Responsive Styles */
-@media (max-width: 200px) {
+@media (max-width: 768px) {
   .navbar-links {
     display: none; /* Hide links by default on mobile */
     flex-direction: column;
@@ -49,14 +55,25 @@
     top: 100%; /* Position below the navbar */
     left: 0;
     background-color: #1a2332; /* Match navbar background */
+    transition: max-height 0.3s ease-out; /* Add transition for smoothness */
+    max-height: 0; /* Start hidden */
+    overflow: hidden; /* Hide overflow */
   }
 
   .navbar-links.active {
     display: flex; /* Show links when active */
+    max-height: 500px; /* Set a maximum height to allow for expansion */
   }
 
   .hamburger-menu {
     display: flex; /* Show hamburger menu on mobile */
+  }
+
+  /* Links and Buttons */
+  .navbar-links a {
+    padding: 1rem; /* Add padding for better touch target */
+    text-align: center; /* Center text on mobile */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Add a border for separation */
   }
 }
 
@@ -65,7 +82,7 @@
 .logout-button {
   color: #fff;
   text-decoration: none;
-  margin-left: 1.5rem;
+  margin-left: 1.5rem; /* Original spacing for desktop */
   font-weight: bold;
 }
 

@@ -1,4 +1,3 @@
-/* Contact.css */
 .contact-container {
   width: 100%;
   padding: 20px;
@@ -11,7 +10,7 @@
 }
 
 .contact-header h2 {
-  font-size: 36px;
+  font-size: 2.5rem; /* Changed to responsive size */
   margin: 0;
 }
 
@@ -25,7 +24,7 @@
 }
 
 .contact-info h3 {
-  font-size: 24px;
+  font-size: 1.5rem; /* Changed to responsive size */
   margin-bottom: 20px;
 }
 
@@ -41,9 +40,10 @@
   background-color: #f0e855;
   border: 2px solid orange;
   padding: 20px;
-  width: 200px;
+  flex: 1 1 200px; /* Flexible sizing */
   text-align: center;
   color: black;
+  max-width: 200px; /* Limit max width */
 }
 
 .info-box i.icon {
@@ -69,29 +69,31 @@
   justify-content: center;
   gap: 20px;
   margin-top: 30px;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 .contact-form {
   border: 1px solid orange;
   padding: 20px;
-  width: 500px;
-  margin-right: 300px;
+  flex: 1 1 400px; /* Flexible sizing */
+  max-width: 500px; /* Limit max width */
 }
 
 .contact-image {
-  width: 450px;
-  height: 450px;
+  width: 100%; /* Make image responsive */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 450px; /* Limit max width */
 }
 
 .contact-form h3 {
-  font-size: 24px;
+  font-size: 1.5rem; /* Changed to responsive size */
   margin-bottom: 20px;
 }
 
 .contact-form form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch; /* Align items to fill available width */
 }
 
 .contact-form input,
@@ -128,13 +130,13 @@
 }
 
 .faq-section h3 {
-  font-size: 24px;
+  font-size: 1.5rem; /* Changed to responsive size */
   margin-bottom: 20px;
 }
 
 .faq-boxes {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
   gap: 20px;
   justify-content: center;
   margin-bottom: 200px;
@@ -168,8 +170,6 @@
   color: black;
 }
 
-
-
 .faq-box.active {
   padding: 20px; /* Increase padding for expanded box */
 }
@@ -190,10 +190,6 @@
   color: black;
   padding-top: 10px;
 }
-.arrow-icon {
-  font-size: 18px;
-  color: orange;
-}
 
 /* Add styles for the active arrow icon */
 .faq-question.active-question .arrow-icon {
@@ -211,4 +207,19 @@
   transition: opacity 0.5s ease;
 }
 
+/* Media Queries for smaller devices */
+@media (max-width: 768px) {
+  .contact-header h2 {
+    font-size: 2rem;
+  }
+  
+  .contact-header p,
+  .contact-info h3,
+  .contact-form h3 {
+    font-size: 1.25rem;
+  }
 
+  .info-box {
+    max-width: 90%; /* Allow full width on smaller screens */
+  }
+}

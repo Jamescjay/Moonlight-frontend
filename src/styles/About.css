@@ -1,7 +1,7 @@
-/* About.css */
 .about-page {
   font-family: Arial, sans-serif;
   color: #333;
+  padding: 0 1rem; /* Add padding to prevent content from touching the edges on small screens */
 }
 
 .about-us {
@@ -20,8 +20,8 @@
 
 .about-content {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  flex-direction: column; /* Stack items on small screens */
+  align-items: center; /* Center align for smaller devices */
   margin: 2rem auto;
 }
 
@@ -36,7 +36,8 @@
 
 .about-stats {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap; /* Wrap items on smaller screens */
+  justify-content: center; /* Center align for smaller devices */
   margin-top: 1rem;
 }
 
@@ -46,11 +47,12 @@
   padding: 1rem;
   border-radius: 5px;
   text-align: center;
-  width: 120px; 
+  width: 120px;
+  margin: 0.5rem; /* Add margin for spacing between cards */
 }
 
 .stat-card img {
-  width: 40px; 
+  width: 40px;
   height: auto;
   margin-bottom: 0.5rem;
 }
@@ -66,7 +68,6 @@
   color: #333;
 }
 
-
 /* Our Teachers Section */
 .our-teachers {
   text-align: center;
@@ -80,6 +81,7 @@
 
 .teachers-container {
   display: flex;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
   justify-content: center;
   gap: 1.5rem;
   margin-top: 2rem;
@@ -144,7 +146,6 @@
   text-align: center;
 }
 
-
 /* Student Reviews Section */
 .student-reviews {
   text-align: center;
@@ -158,7 +159,8 @@
 
 .reviews-container {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column; /* Stack reviews on smaller screens */
+  align-items: center; /* Center align for smaller devices */
   margin-top: 2rem;
 }
 
@@ -167,7 +169,7 @@
   max-width: 300px;
   position: relative;
   margin-top: 2rem;
-  font-size: 0.8rem
+  font-size: 0.8rem;
 }
 
 .dialogue-box {
@@ -191,7 +193,6 @@
   border-width: 10px;
   border-style: solid;
   border-color: #ffea94 transparent transparent transparent;
-  transform: translateX(-50%);
 }
 
 .review-card img {
@@ -215,3 +216,42 @@
   color: gold;
 }
 
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column; /* Stack content vertically */
+  }
+
+  .teachers-container,
+  .reviews-container {
+    flex-direction: column; /* Stack teachers and reviews vertically */
+    align-items: center; /* Center align for smaller devices */
+  }
+
+  .teacher-card-wrapper {
+    width: 90%; /* Make teacher cards responsive */
+    max-width: 300px; /* Limit maximum width */
+  }
+
+  .review-card {
+    max-width: 90%; /* Make review cards responsive */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-us h1 {
+    font-size: 2rem; /* Reduce font size for smaller screens */
+  }
+
+  .about-us p {
+    font-size: 0.9rem; /* Reduce font size for smaller screens */
+  }
+
+  .stat-card {
+    width: 80%; /* Make stat cards responsive */
+  }
+
+  .student-info h4 {
+    font-size: 1rem; /* Reduce font size for smaller screens */
+  }
+}

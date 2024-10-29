@@ -17,12 +17,17 @@ function Navbar({ loggedIn, handleLogout, setLoggedIn }) {
         <div
           className={`hamburger-menu ${isMenuOpen ? "open" : ""}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-expanded={isMenuOpen}
+          aria-controls="navbar-links"
         >
           <span></span>
           <span></span>
           <span></span>
         </div>
-        <div className={`navbar-links ${isMenuOpen ? "active" : ""}`}>
+        <div
+          id="navbar-links"
+          className={`navbar-links ${isMenuOpen ? "active" : ""}`}
+        >
           <Link to="/" onClick={() => setIsMenuOpen(false)}>
             Home
           </Link>

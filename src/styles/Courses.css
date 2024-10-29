@@ -10,9 +10,9 @@
 
 .courses-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Use auto-fit for responsiveness */
   justify-items: center; 
-  gap: 20px 5px; 
+  gap: 20px 15px; /* Adjusted gap for better spacing */
   margin: 0; 
 }
 
@@ -21,7 +21,8 @@
   background-color: #fff;
   border: 1px solid orange;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
-  width: 280px; 
+  width: 100%; /* Ensure it uses full width of the grid column */
+  max-width: 280px; /* Set max width for cards */
   display: flex; 
   flex-direction: column; 
   justify-content: space-between; 
@@ -109,14 +110,26 @@
 }
 
 /* Responsive Courses Grid */
-@media (max-width: 200px) {
+@media (max-width: 768px) {
   .courses-grid {
-    grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust for smaller screens */
+    gap: 10px; /* Less gap for mobile */
   }
-  
+
   .course-card {
-    width: 90%; /* Smaller width for mobile */
+    max-width: 90%; /* Allow course card to be 90% of the screen width */
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .course-card img {
+    height: 120px; /* Adjust image height for smaller screens */
+  }
+
+  .read-more-btn,
+  .load-more-btn {
+    padding: 8px 12px; /* Adjust padding for buttons */
+    font-size: 14px; /* Adjust font size for smaller screens */
   }
 }
