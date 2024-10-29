@@ -3,14 +3,19 @@ body {
   font-family: Arial, sans-serif;
 }
 
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
 /* Navbar Styles */
 nav {
   background-color: #f8f9fa;
   padding: 10px;
-  display: flex; /* Flexbox for alignment */
-  justify-content: space-between; /* Space out items */
-  align-items: center; /* Center items vertically */
-  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 
 nav a {
@@ -30,43 +35,38 @@ nav button {
 /* Responsive Styles */
 @media (max-width: 768px) {
   nav {
-    flex-direction: column; /* Stack items on smaller screens */
-    align-items: flex-start; /* Align items to the start */
-    width: 100%; /* Ensure navbar takes full width */
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
   }
 
   nav a {
-    margin: 5px 0; /* Add vertical margin for stacked items */
-    width: 100%; /* Full width for links */
-    text-align: center; /* Center text for better touch targets */
+    margin: 5px 0;
+    width: 100%;
+    text-align: center;
   }
 
   h1 {
-    font-size: 24px; /* Smaller font size on mobile */
-    text-align: center; /* Center title */
+    font-size: 24px;
+    text-align: center;
   }
 
   p {
-    font-size: 14px; /* Smaller paragraph text */
-    text-align: justify; /* Justify text for better alignment */
+    font-size: 14px;
+    text-align: justify;
   }
 }
 
 @media (max-width: 480px) {
   nav {
-    padding: 5px; /* Reduced padding on mobile */
+    padding: 5px;
   }
 
   h1 {
-    font-size: 20px; /* Even smaller font size */
+    font-size: 20px;
   }
 
   p {
-    font-size: 12px; /* Even smaller paragraph text */
+    font-size: 12px;
   }
-}
-
-#root {
-  width: 100%; /* Full width */
-  min-height: 100vh; /* Full height of the viewport */
 }
