@@ -1,7 +1,6 @@
 .about-page {
   font-family: Arial, sans-serif;
   color: #333;
-  padding: 0 1rem; /* Add padding to prevent content from touching the edges on small screens */
 }
 
 .about-us {
@@ -20,24 +19,25 @@
 
 .about-content {
   display: flex;
-  flex-direction: column; /* Stack items on small screens */
-  align-items: center; /* Center align for smaller devices */
+  justify-content: space-around;
+  align-items: center;
   margin: 2rem auto;
 }
 
+/* Ensure text doesn't overflow and image scales */
 .about-text {
   max-width: 500px;
 }
 
-.about-text h2 {
-  font-size: 2rem;
-  color: white;
+.about-image img {
+  max-width: 100%; /* Responsive image */
+  height: auto; /* Maintain aspect ratio */
 }
 
+/* Statistics Section */
 .about-stats {
   display: flex;
-  flex-wrap: wrap; /* Wrap items on smaller screens */
-  justify-content: center; /* Center align for smaller devices */
+  justify-content: space-around;
   margin-top: 1rem;
 }
 
@@ -47,12 +47,11 @@
   padding: 1rem;
   border-radius: 5px;
   text-align: center;
-  width: 120px;
-  margin: 0.5rem; /* Add margin for spacing between cards */
+  width: 120px; 
 }
 
 .stat-card img {
-  width: 40px;
+  width: 40px; 
   height: auto;
   margin-bottom: 0.5rem;
 }
@@ -81,7 +80,6 @@
 
 .teachers-container {
   display: flex;
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
   justify-content: center;
   gap: 1.5rem;
   margin-top: 2rem;
@@ -159,8 +157,7 @@
 
 .reviews-container {
   display: flex;
-  flex-direction: column; /* Stack reviews on smaller screens */
-  align-items: center; /* Center align for smaller devices */
+  justify-content: space-around;
   margin-top: 2rem;
 }
 
@@ -216,42 +213,35 @@
   color: gold;
 }
 
-/* Media Queries for Responsiveness */
+/* Responsive Styles */
 @media (max-width: 768px) {
   .about-content {
-    flex-direction: column; /* Stack content vertically */
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center; /* Center align content */
   }
 
-  .teachers-container,
-  .reviews-container {
-    flex-direction: column; /* Stack teachers and reviews vertically */
-    align-items: center; /* Center align for smaller devices */
+  .about-text {
+    max-width: 90%; /* Allow more width for text */
+    padding: 0 1rem; /* Add some padding */
+    text-align: center; /* Center text for better readability */
   }
 
-  .teacher-card-wrapper {
-    width: 90%; /* Make teacher cards responsive */
-    max-width: 300px; /* Limit maximum width */
-  }
-
-  .review-card {
-    max-width: 90%; /* Make review cards responsive */
-  }
-}
-
-@media (max-width: 480px) {
-  .about-us h1 {
-    font-size: 2rem; /* Reduce font size for smaller screens */
-  }
-
-  .about-us p {
-    font-size: 0.9rem; /* Reduce font size for smaller screens */
+  .about-stats {
+    flex-direction: column; /* Stack stats vertically */
+    align-items: center; /* Center align stats */
   }
 
   .stat-card {
-    width: 80%; /* Make stat cards responsive */
+    margin: 1rem 0; /* Add vertical margin for spacing */
+    width: 80%; /* Make cards responsive */
   }
 
-  .student-info h4 {
-    font-size: 1rem; /* Reduce font size for smaller screens */
+  .teachers-container {
+    flex-direction: column; /* Stack teacher cards on smaller screens */
+    align-items: center; /* Center align teacher cards */
+  }
+
+  .review-card {
+    max-width: 90%; /* Allow more width for reviews */
   }
 }
