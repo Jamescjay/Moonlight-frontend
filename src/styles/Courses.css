@@ -128,13 +128,33 @@
 }
 
 @media (max-width: 480px) {
+  .courses-grid {
+    grid-template-columns: 1fr; /* exactly one column */
+    gap: 10px;
+  }
+
+  .course-card {
+    max-width: 95%; /* widen the card a bit */
+  }
+
   .course-card img {
-    height: 120px; /* Adjust image height for smaller screens */
+    height: 120px;
   }
 
   .read-more-btn,
   .load-more-btn {
-    padding: 8px 12px; /* Adjust padding for buttons */
-    font-size: 14px; /* Adjust font size for smaller screens */
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+/* Optional: also for ultra small 360px */
+@media (max-width: 360px) {
+  .courses-grid {
+    grid-template-columns: 1fr; /* still one column */
+  }
+
+  .course-card {
+    max-width: 100%;
   }
 }
