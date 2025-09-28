@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
-import { Person } from "./Icons";
+import { UserCircle } from 'lucide-react';
 import LoginModal from "./LoginModal";
 
 function Navbar({ loggedIn, handleLogout, setLoggedIn }) {
@@ -41,9 +41,9 @@ function Navbar({ loggedIn, handleLogout, setLoggedIn }) {
             Contact
           </Link>
           {!loggedIn ? (
-            <div className="navbar-icon" onClick={() => setIsModalOpen(true)}>
-              <Person />
-            </div>
+             <div style={{ display: 'flex', gap: 12, alignItems: 'center' }} className="navbar-icon" onClick={() => setIsModalOpen(true)}>
+      <UserCircle size={32} />    
+    </div>
           ) : (
             <button className="logout-button" onClick={handleLogout}>
               Logout

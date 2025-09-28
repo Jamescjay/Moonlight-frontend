@@ -1,33 +1,33 @@
 import React from "react";
-import "../styles/Footer.css"; // Import the CSS file for styling
-import { Facebook, Instagram, LinkedIn, Twitter } from "./Icons";
+import "../styles/Footer.css";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <div className="footer-info">
-          <a href="/">
+        <div className="footer-section footer-info">
+          <a href="/" className="brand-link">
             <h2>🌕Moonlight</h2>
           </a>
-          <p>Ngong Road P.O. Box: 1896-20117 Nairobi, Kenya</p>
-          <div className="icons">
-            <a href="#facebook">
-              <Facebook />
+          <p className="address">Ngong Road P.O. Box: 1896-20117 Nairobi, Kenya</p>
+          <div className="footer-social-icons">
+            <a href="#facebook" className="footer-social-link" aria-label="Facebook">
+              <Facebook size={24} />
             </a>
-            <a href="#twitter">
-              <Twitter />
+            <a href="#twitter" className="footer-social-link" aria-label="Twitter">
+              <Twitter size={24} />
             </a>
-            <a href="#instagram">
-              <Instagram />
+            <a href="#instagram" className="footer-social-link" aria-label="Instagram">
+              <Instagram size={24} />
             </a>
-            <a href="#linkedin">
-              <LinkedIn />
+            <a href="#linkedin" className="footer-social-link" aria-label="LinkedIn">
+              <Linkedin size={24} />
             </a>
           </div>
         </div>
 
-        <div className="quick-links">
+        <div className="footer-section quick-links">
           <h5>Quick Links</h5>
           <ul>
             <li>
@@ -45,7 +45,7 @@ function Footer() {
           </ul>
         </div>
 
-        <div className="useful-links">
+        <div className="footer-section useful-links">
           <h5>Useful Links</h5>
           <ul>
             <li>
@@ -63,17 +63,24 @@ function Footer() {
           </ul>
         </div>
 
-        <div className="newsletter">
+        <div className="footer-section newsletter">
           <h5>Newsletter</h5>
-          <p>Subscribe to our newsletter.</p>
-          <label htmlFor="email">Enter your Email:</label>
-          <input type="email" id="email" placeholder="Your Email" />
-          <button className="subscribe-btn">Subscribe</button>
+          <p className="newsletter-description">Subscribe to our newsletter for updates.</p>
+          <div className="newsletter-form">
+            <label htmlFor="email" className="email-label">Enter your Email:</label>
+            <input 
+              type="email" 
+              id="email" 
+              placeholder="Your Email" 
+              className="email-input"
+            />
+            <button className="subscribe-btn">Subscribe</button>
+          </div>
         </div>
       </div>
 
       <div className="footer-divider" />
-      <p className="footer-rights">All rights reserved.</p>
+      <p className="footer-rights">© 2024 Moonlight. All rights reserved.</p>
     </footer>
   );
 }

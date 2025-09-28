@@ -10,10 +10,13 @@
 
 .courses-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Use auto-fit for responsiveness */
-  justify-items: center; 
-  gap: 20px 15px; /* Adjusted gap for better spacing */
-  margin: 0; 
+  /* 4 equal-width columns on large screens */
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center; /* center each card inside its grid cell */
+  gap: 20px; /* same gap for rows and columns */
+  margin: 0 auto; /* center the whole grid horizontally */
+  max-width: 1300px; 
+  width: 100%;
 }
 
 .course-card {
@@ -28,7 +31,8 @@
   justify-content: space-between; 
   height: auto; 
   transition: transform 0.3s; 
-  margin: 0; 
+  margin: 0;
+  padding: 10px; 
 }
 
 .course-label {

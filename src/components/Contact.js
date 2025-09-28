@@ -1,109 +1,174 @@
 import React, { useState } from "react";
 import "../styles/Contact.css";
+import { Clock, Phone, Mail, MapPin, ChevronDown, ChevronUp } from "lucide-react";
 
 function Contact() {
   const [faqOpen, setFaqOpen] = useState(null);
   const [feedbackMessage, setFeedbackMessage] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: ""
+  });
 
   const toggleFaq = (index) => {
     setFaqOpen(faqOpen === index ? null : index);
   };
 
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFeedbackMessage("Feedback submitted successfully");
+    setFeedbackMessage("Thank you! Your message has been sent successfully.");
 
-    // Clear the message after 3 seconds
+    // Clear the message after 4 seconds
     setTimeout(() => {
       setFeedbackMessage("");
-    }, 3000);
+    }, 4000);
 
-    e.target.reset(); // Clears the form
+    // Reset form
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      message: ""
+    });
   };
 
   return (
     <div className="contact-container">
+      {/* Header Section */}
       <div className="contact-header">
-        <h2>Contact Us</h2>
-        <p>Home / Contact</p>
+        <h1>Contact Us</h1>
       </div>
 
-      <div className="contact-info">
-        <h3>Get In Touch</h3>
+      {/* Contact Info Section */}
+      <div className="contact-info-section">
+        <h2>Get In Touch</h2>
         <div className="info-boxes">
           <div className="info-box">
-            <i className="icon">🕒</i>
-            <h4>Opening Hours:</h4>
-            <p>8:00AM to 6:00PM</p>
+            <div className="icon-wrapper">
+              <Clock size={32} />
+            </div>
+            <h4>Opening Hours</h4>
+            <p>Monday - Friday<br />8:00 AM - 6:00 PM</p>
           </div>
           <div className="info-box">
-            <i className="icon">📞</i>
-            <h4>Phone:</h4>
-            <p>
-              +254 793 362 479
-              <br />
-              +254 793 098 674
-            </p>
+            <div className="icon-wrapper">
+              <Phone size={32} />
+            </div>
+            <h4>Phone Numbers</h4>
+            <p>+254 793 362 479<br />+254 793 098 674</p>
           </div>
           <div className="info-box">
-            <i className="icon">📧</i>
-            <h4>Email:</h4>
-            <p>Moonlight@daskcation.com</p>
+            <div className="icon-wrapper">
+              <Mail size={32} />
+            </div>
+            <h4>Email Address</h4>
+            <p>Moonlight@education.com</p>
           </div>
           <div className="info-box">
-            <i className="icon">📍</i>
-            <h4>Location:</h4>
-            <p>Nairobi, Kenya</p>
+            <div className="icon-wrapper">
+              <MapPin size={32} />
+            </div>
+            <h4>Our Location</h4>
+            <p>Ngong Road<br />Nairobi, Kenya</p>
           </div>
         </div>
       </div>
 
+      {/* Contact Content Section */}
       <div className="contact-content">
-        <div className="contact-form">
+            <div className="contact-image-section">
+          <img
+            src="/assets/Contact.gif"
+            alt="Contact Us Illustration"
+            className="contact-image"
+          />
+        </div>
+        <div className="contact-form-section">
           <h3>Send Us A Message</h3>
-          <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="Name" required />
-            <input type="email" placeholder="Email" required />
-            <input type="tel" placeholder="Phone" required />
-            <textarea placeholder="Message" required></textarea>
-            <button type="submit">Send Message</button>
+          <form onSubmit={handleSubmit} className="modern-form">
+            <div className="form-group">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Full Name"
+                value={formData.name}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email Address"
+                value={formData.email}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Your Phone Number"
+                value={formData.phone}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                value={formData.message}
+                onChange={handleInputChange}
+                required
+              ></textarea>
+            </div>
+            <button type="submit" className="submit-btn">
+              Send Message
+            </button>
           </form>
           {feedbackMessage && (
-            <div className="alert-box">{feedbackMessage}</div>
+            <div className="success-message">{feedbackMessage}</div>
           )}
         </div>
-        <img
-          src="https://thuotracy.github.io/school-website/images/Contact%20us.gif"
-          alt="Contact"
-          className="contact-image"
-        />
+        
+    
       </div>
 
+      {/* FAQ Section */}
       <div className="faq-section">
-        <h3>Frequently Asked Questions</h3>
-        <div className="faq-boxes">
+        <h2>Frequently Asked Questions</h2>
+        <div className="faq-container">
           {faqData.map((item, index) => (
             <div
-              className={`faq-box ${faqOpen === index ? "active" : ""}`}
+              className={`faq-item ${faqOpen === index ? "active" : ""}`}
               key={index}
             >
               <div
-                className={`faq-question ${
-                  faqOpen === index ? "active-question" : ""
-                }`}
+                className="faq-question"
                 onClick={() => toggleFaq(index)}
               >
-                {item.question}
-                <span className="arrow-icon">
-                  {faqOpen === index ? "▲" : "▼"}
-                </span>
+                <span className="question-text">{item.question}</span>
+                <div className="arrow-icon">
+                  {faqOpen === index ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
+                </div>
               </div>
               <div
                 className="faq-answer-container"
                 style={{
-                  maxHeight: faqOpen === index ? "200px" : "0",
-                  overflow: "hidden",
-                  transition: "max-height 0.3s ease",
+                  maxHeight: faqOpen === index ? "300px" : "0",
+                  opacity: faqOpen === index ? "1" : "0",
                 }}
               >
                 <div className="faq-answer">{item.answer}</div>
@@ -123,19 +188,19 @@ const faqData = [
       "We have several numbers displayed on our website, and you can contact any for an immediate response from our staff. You can also find us through our email at Moonlight@education.com.",
   },
   {
-    question: "What is the best career in 2022?",
+    question: "What is the best career in 2024?",
     answer:
-      "We can not mention a particular career as the best. We encourage all our students to take a course that they love and enjoy doing. You can never go wrong with your instincts.",
+      "We cannot mention a particular career as the best. We encourage all our students to take a course that they love and enjoy doing. You can never go wrong with your instincts.",
   },
   {
-    question: "How much fees for web development?",
+    question: "How much are the fees for web development?",
     answer:
-      "We have both online and in-person classes for all our courses. For web development, the fees for online classes is $ 275 per term and for in-person classes is $ 425 per term.",
+      "We have both online and in-person classes for all our courses. For web development, the fees for online classes is $275 per term and for in-person classes is $425 per term.",
   },
   {
     question: "Do you offer financial aid?",
     answer:
-      "We offer financial aid to our students on a need and merit basis. The options that are currently available include partial scholarships for For more information on financial aid please visit our financial aid page.",
+      "We offer financial aid to our students on a need and merit basis. The options that are currently available include partial scholarships. For more information on financial aid please visit our financial aid page.",
   },
   {
     question: "What payment methods are available?",
@@ -145,7 +210,7 @@ const faqData = [
   {
     question: "Do you guarantee employment upon completion of course?",
     answer:
-      "NO. What we guarantee is career-ready skills. Our courses are practical and relevant to the market. That is why many of our graduates find jobs. Moringa School offers support through training and informing graduates of job opportunities.",
+      "No. What we guarantee is career-ready skills. Our courses are practical and relevant to the market. That is why many of our graduates find jobs. Moonlight offers support through training and informing graduates of job opportunities.",
   },
 ];
 
