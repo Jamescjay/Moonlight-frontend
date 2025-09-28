@@ -17,14 +17,39 @@ function App() {
   }, []);
 
   const checkSession = async () => {
-    const response = await fetch("http://localhost:5000/check_session");
-    const data = await response.json();
-    setLoggedIn(data.logged_in);
+    try {
+      const response = await fetch("http://localhost:5000/check_session");
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      setLoggedIn(data.logged_in);
+    } catch (error) {
+      console.log("Backend server is not running or not accessible:", error.message);
+      // Set loggedIn to false as fallback when backend is not available
+      setLoggedIn(false);
+    }
   };
 
   const handleLogout = async () => {
-    await fetch("http://localhost:5000/logout", { method: "POST" });
-    setLoggedIn(false);
+    try {
+      const response = await fetch("http://localhost:5000/logout", { 
+        method: "POST",
+        credentials: 'include' // Include cookies if using session-based auth
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      setLoggedIn(false);
+    } catch (error) {
+      console.log("Logout failed:", error.message);
+      // Still set loggedIn to false even if logout request fails
+      setLoggedIn(false);
+    }
   };
 
   return (
